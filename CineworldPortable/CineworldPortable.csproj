@@ -51,6 +51,7 @@
     <Compile Include="Entities\PerformancesResponse.cs" />
     <Compile Include="Entities\Territory.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="ICineworldClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

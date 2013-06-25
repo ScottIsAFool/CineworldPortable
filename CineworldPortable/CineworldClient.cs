@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace CineworldPortable
 {
-    public class CineworldClient
+    public class CineworldClient : ICineworldClient
     {
         #region Private constants
 
