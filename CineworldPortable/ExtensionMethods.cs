@@ -31,6 +31,7 @@ namespace CineworldPortable
             {
                 var queryType = i == 0 ? "?" : "&";
                 sb.AppendFormat("{0}{1}={2}", queryType, item.Key, item.Value);
+                i++;
             }
 
             return sb.ToString();

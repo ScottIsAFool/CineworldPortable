@@ -488,9 +488,9 @@ namespace CineworldPortable
         /// <returns>The request data type</returns>
         private async Task<T> GetDataAsync<T>(Dictionary<string, string> queryData, string methodCall)
         {
-            string url = GetCineworldUrl(methodCall, queryData);
+            var url = GetCineworldUrl(methodCall, queryData);
 
-            string response = await _httpClient.GetStringAsync(url);
+            var response = await _httpClient.GetStringAsync(url);
 
             var responseItem = JsonConvert.DeserializeObject<T>(response);
 
