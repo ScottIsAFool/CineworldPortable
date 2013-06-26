@@ -16,7 +16,7 @@ namespace CineworldPortable
         /// <summary>
         ///     The base URL
         /// </summary>
-        private const string BaseUrl = "http://www.cineworld.com/api/";
+        private const string BaseUrl = "http://www.cineworld.co.uk/api/";
 
         #endregion
 
@@ -48,7 +48,7 @@ namespace CineworldPortable
         public CineworldClient(HttpClientHandler handler, string apiKey)
         {
             _httpClient = handler == null
-                ? new HttpClient(new HttpClientHandler {AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip})
+                ? new HttpClient(new HttpClientHandler {AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip, AllowAutoRedirect = true})
                 : new HttpClient(handler);
             ApiKey = apiKey;
         }
