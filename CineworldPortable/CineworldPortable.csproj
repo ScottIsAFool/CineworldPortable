@@ -17,6 +17,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuSpecFile>CineworldPortable.nuspec</NuSpecFile>
+    <FodyPath>..\packages\Fody.1.13.8.0</FodyPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +66,10 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.1.38.7.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.IO">
       <HintPath>..\packages\Microsoft.Bcl.1.1.0-beta\lib\portable-net40+sl4+win8+wp71\System.IO.dll</HintPath>
     </Reference>
@@ -86,7 +91,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CineworldPortable.nuspec" />
+    <None Include="Fody.targets" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.7\tools\Microsoft.Bcl.Build.targets" />
@@ -94,6 +103,7 @@
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir).nuget\nuget.exe" pack "$(ProjectPath)" -OutputDirectory ./../../../</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="Fody.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

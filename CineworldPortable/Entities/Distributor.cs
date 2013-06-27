@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using PropertyChanged;
 
 namespace CineworldPortable.Entities
 {
+    [ImplementPropertyChanged]
     public class Distributor
     {
         [JsonProperty("id")]
