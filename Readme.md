@@ -12,7 +12,5 @@ Yeah, the main classes (Cinema, Film, Distributor, Performance and Category) all
 ## How do I install it? ##
 Nuget. Basically. 
 
-PM> Install-Package CineworldPortable -Pre
+PM> Install-Package CineworldPortable
 
-## So what issues are there? ##
-Well, it's built using the PCL version of HttpClient, which is now out of beta and has a go-live licence (yay!!), however, I've built this with the beta version that has support for automatic compression, which doesn't have a go-live licence, yet. So technically you're not meant to use it in any actual projects. So if you do, well, there's not a lot I can really do about that :)
